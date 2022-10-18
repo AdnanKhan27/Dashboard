@@ -1,12 +1,10 @@
-import Settings from './Settings';
-
 export { default as Button } from './Button';
-export { default as ThemeSettings } from './Settings';
+export { default as Settings } from './Settings';
 export { default as Sidebar } from './Sidebar';
 export { default as Navbar } from './Navbar';
 export { default as Footer } from './Footer';
 // export { default as Cart } from './Cart';
-export { default as Settings } from './Settings';
+// export { default as Settings } from './ThemeSettings';
 export { default as Help } from './Help';
 export { default as Notification } from './Notification';
 export { default as UserProfile } from './UserProfile';

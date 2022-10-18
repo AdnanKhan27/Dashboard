@@ -3,8 +3,11 @@ import { GridComponent, ColumnsDirective, ColumnDirective, Resize, Sort, Context
 
 import { ordersData, contextMenuItems, ordersGrid } from '../data/dummy';
 import { Header } from '../components';
+import { useStateContext } from '../contexts/ContextProvider';
 
 const Orders = ( ) => {
+  const { currentMode } = useStateContext();
+
   return (
     <div className="m-2 md:m-10 sm:mt-24 p-2 md:p-4 bg-white rounded-3xl">
       <Header category="Page" title="Orders" />
