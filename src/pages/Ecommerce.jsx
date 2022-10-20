@@ -15,11 +15,11 @@ const Ecommerce = () => {
   return (
     <div className="mt-12">
       <div className="flex flex-wrap lg:flex-nowrap justify-center">
-        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-44 rounded-xl w-full lg:w-80 p-8 pt-9 m-3 bg-hero-pattern bg-no-repeat bg-cover bg-center border border-gray-100 dark:border-gray-600">
+        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-44 rounded-xl w-full lg:w-80 p-8 pt-9 m-3 bg-hero-pattern bg-no-repeat bg-cover bg-center dark:bg-blend-overlay border border-gray-100 dark:border-gray-600">
           <div className="flex justify-between items-center">
             <div>
-              <p className="font-bold text-gray-400">Earnings</p>
-              <p className="text-2xl">$45,567.56</p>
+              <p className="font-bold text-4xl dark:text-gray-400 text-white">Earnings</p>
+              <p className="text-2xl mt-2">$45,567.56</p>
             </div>
           </div>
           {/* <div className="mt-6">
@@ -60,7 +60,7 @@ const Ecommerce = () => {
           {salesActivity.map((item) => (
             <div
               key={item.title}
-              className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg md:w-40 p-4 pt-9 rounded-2xl text-center border border-gray-100 dark:border-gray-600"
+              className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg md:w-40 p-4 pt-4 rounded-2xl text-center border border-gray-100 dark:border-gray-600"
             >
               <button
                 type="button"
