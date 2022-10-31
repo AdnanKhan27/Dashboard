@@ -20,7 +20,7 @@
     "react-router-dom": "^6.4.0"
   },
   "scripts": {
-    "start": "react-scripts --openssl-legacy-provider start",
+    "start": "react-scripts start",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "build": "react-scripts build",
@@ -41,6 +41,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.2",
+    "css-minimizer-webpack-plugin": "^4.2.2",
     "cssnano": "^5.1.14",
     "gh-pages": "^4.0.0",
     "postcss": "^8.4.6",
