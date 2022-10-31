@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const Pie = () => {
   return (
@@ -6,4 +6,4 @@ const Pie = () => {
   )
 }
 
-export default Pie
+export default Pie;
