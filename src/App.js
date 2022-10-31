@@ -5,7 +5,6 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-//import { FiSettings } from 'react-icons/fi';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
 import { Navbar, Footer, Sidebar, Settings } from './components';
@@ -14,7 +13,6 @@ import { Ecommerce, Orders, Calendar, Employees, Stacked, Pyramid, Line, Bar, Ar
 import { useStateContext } from './contexts/ContextProvider';
 
 const App = () => {
-  // const activeMenu = true;
   const { activeMenu, themeSettings, currentMode } = useStateContext();
 
   return (

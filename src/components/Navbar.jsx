@@ -53,7 +53,7 @@ const Navbar = () => {
         <NavButton 
         title="Settings" 
         customFunc={() => setThemeSettings(true)}
-        // onClick={() => setThemeSettings(true)}
+        /* onClick={() => setThemeSettings(true)} */
         color={currentColor}
         icon={<FiSettings />} />
         <NavButton 

@@ -20,7 +20,7 @@ import {
 import { useStateContext } from "../../contexts/ContextProvider";
 
 const Stacked = ({ width, height }) => {
-  const { currentMode } = useStateContext(); //getting the current active mode (dark/light) from contexts
+  const { currentMode } = useStateContext(); /* getting the current active mode (dark/light) from contexts */
   
   return (
     <ChartComponent
