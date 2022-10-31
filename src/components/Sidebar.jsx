@@ -28,7 +28,7 @@ const Sidebar = () => {
           className="items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900">
             <MdSpaceDashboard /> <span>Dashboard</span>
           </Link>
-          <TooltipComponent content="Menu" position="BottomCenter">
+          <TooltipComponent content="Close" position="BottomCenter">
             <button type="button" onClick={() => setActiveMenu((prevActiveMenu) => !prevActiveMenu)}
             className="text-xl rounded-full p-3 hover:bg-light-gray mt-4 block md:hidden">
               <MdOutlineCancel />
@@ -49,7 +49,7 @@ const Sidebar = () => {
                   style={({ isActive }) => ({
                     backgroundColor: isActive ? currentColor: ''
                   })}
-                  className={({ isActive }) => isActive ? activeLink : normalLink}
+                  className={({ isActive }) => isActive ? activeLink : normalLink }
                 >
                   {link.icon}
                   <span className="capitalize">
