@@ -1,6 +1,5 @@
 {
   "name": "project_syncfusion_dashboard",
-  "homepage": "https://github.com/AdnanKhan27/DMS-Dashboard",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -17,7 +16,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
-    "react-router-dom": "^6.4.0"
+    "react-router-dom": "^6.4.0",
+    "react-scripts": "5.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -42,10 +42,7 @@
   "devDependencies": {
     "autoprefixer": "^10.4.2",
     "css-minimizer-webpack-plugin": "^4.2.2",
-    "cssnano": "^5.1.14",
-    "gh-pages": "^4.0.0",
     "postcss": "^8.4.6",
-    "react-scripts": "^5.0.1",
     "tailwindcss": "^3.0.19"
   }
 }
