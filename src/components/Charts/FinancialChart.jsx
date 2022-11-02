@@ -31,7 +31,7 @@ const FinancialChart = ({ width, height, xAxisData, yAxisData, data }) => {
     <ChartComponent
       width={width}
       height={height}
-      id="charts"
+      id="financial-charts"
       primaryXAxis={xAxisData}
       primaryYAxis={yAxisData}
       chartArea={{ border: { width: 0 } }}
