@@ -7,7 +7,6 @@ import {
   DateTime,
   Legend,
   Tooltip,
-  Chart,
   LineSeries,
 } from "@syncfusion/ej2-react-charts";
 
