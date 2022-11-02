@@ -13,7 +13,7 @@ import {
 
 import { useStateContext } from "../../contexts/ContextProvider";
 
-const Stacked = ({ width, height, xAxisData, yAxisData, data }) => {
+const StackedChart = ({ width, height, xAxisData, yAxisData, data }) => {
   const { currentMode } = useStateContext(); /* getting the current active mode (dark/light) from contexts */
   
   return (
@@ -40,4 +40,4 @@ const Stacked = ({ width, height, xAxisData, yAxisData, data }) => {
   );
 };
 
-export default Stacked;
+export default StackedChart;

@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React /* { useState } */ from 'react';
 import './App.css';
 import {
   BrowserRouter as Router,
   Routes,
   Route,
 } from "react-router-dom";
-import { TooltipComponent } from '@syncfusion/ej2-react-popups';
+
+// import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
 import { Navbar, Footer, Sidebar, Settings } from './components';
 import { Ecommerce, Orders, Calendar, Employees, Stacked, Pyramid, Line, Bar, Area, Customers, Financial, ColorMapping, Pie} from './pages';
@@ -68,6 +69,9 @@ const App = () => {
                 <Route path="/bar" element={<Bar />} />
                 <Route path="/pie" element={<Pie />} />
                 <Route path="/financial" element={<Financial />} />
+                <Route path="/stacked" element={<Stacked />} />
+                <Route path="/colormapping" element={<ColorMapping />} />
+                <Route path="/pyramid" element={<Pyramid />} />
                 
               </Routes>
             </div>

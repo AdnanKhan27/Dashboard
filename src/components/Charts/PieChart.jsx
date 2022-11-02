@@ -53,6 +53,7 @@ const PieChart = ({ data, radius }) => {
             name: "text",
             font: {
               fontWeight: "600",
+              color: "white"
             },
           }}
         />
