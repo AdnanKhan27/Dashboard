@@ -23,7 +23,7 @@ const LineChart = ({ height, width, xAxisData, yAxisData, data }) => {
       primaryXAxis={xAxisData}
       primaryYAxis={yAxisData}
       chartArea={{ border: { width: 0 } }}
-      tooltip={{ enable: true }}
+      tooltip={{ enable: true, fill: `${currentMode === "Dark" ? "#fff" : "#33373E"}`, textStyle: { color: `${currentMode === "Dark" ? "#33373E" : "#fff"}` } }}
       background={currentMode === "Dark" ? "#33373E" : "#fff"}
       legendSettings={{
         textStyle: { color: `${currentMode === "Dark" ? "#fff" : "#33373E"}` },

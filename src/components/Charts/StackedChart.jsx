@@ -24,7 +24,7 @@ const StackedChart = ({ width, height, xAxisData, yAxisData, data }) => {
       primaryXAxis={xAxisData}
       primaryYAxis={yAxisData}
       chartArea={{ border: { width: 0 } }}
-      tooltip={{ enable: true }}
+      tooltip={{ enable: true, fill: `${currentMode === "Dark" ? "#fff" : "#33373E"}`, textStyle: { color: `${currentMode === "Dark" ? "#33373E" : "#fff"}` } }}
       /* 👇changing the legend text color acc. to theme mode(dark/light) */
       legendSettings={{ textStyle: {color: `${currentMode === "Dark" ? "#fff" : "#33373E"}` } }}
       /* 👇changing the background color of whole chart acc. to theme mode(dark/light) */
