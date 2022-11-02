@@ -7,7 +7,7 @@ import { MdKeyboardArrowDown } from 'react-icons/md';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
 import avatar from '../data/avatar.jpg';
-import { Help, Notification, UserProfile, Settings } from '.';
+import { Help, Notification, UserProfile } from '.';
 import { useStateContext } from '../contexts/ContextProvider';
 
 const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
@@ -25,15 +25,16 @@ const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
 )
 
 const Navbar = () => {
-  const { activeMenu, setActiveMenu, isClicked, setIsClicked, handleClick, screenSize,setScreenSize, themeSettings, setThemeSettings, currentColor } = useStateContext();
+  const { setActiveMenu, isClicked, handleClick, screenSize, setScreenSize, setThemeSettings, currentColor } = useStateContext();
 
   useEffect(() => {
+    // setting the screenSize to the innerWidth of the screen in px
     const handleResize = () => setScreenSize(window.innerWidth);
-
+    // adding an event listner
     window.addEventListener('resize', handleResize);
 
     handleResize();
-
+    // removes the event listner
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
@@ -58,13 +59,13 @@ const Navbar = () => {
         icon={<FiSettings />} />
         <NavButton 
         title="Help"
-        dotColor="#03C9D7"
+        dotColor={ currentColor }
         customFunc={() => handleClick('help')} 
         color={currentColor} 
         icon={<MdOutlineHelpOutline />} />
         <NavButton 
         title="Notifications"
-        dotColor="#03C9D7"
+        dotColor={ currentColor }
         customFunc={() => handleClick('notification')} 
         color={currentColor} 
         icon={<RiNotification3Line />} />
