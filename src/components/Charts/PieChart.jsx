@@ -40,7 +40,7 @@ const PieChart = ({ data, radius }) => {
           dataSource={data}
           xName="x"
           yName="y"
-          // innerRadius="40%"
+          innerRadius="40%"
           startAngle={0}
           endAngle={360}
           radius={radius}
