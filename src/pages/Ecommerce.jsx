@@ -6,6 +6,9 @@ import {
   salesActivity,
   SparklineAreaData,
   ecomPieChartData,
+  stackedCustomSeries,
+  stackedPrimaryXAxis,
+  stackedPrimaryYAxis
 } from "../data/dummy";
 import { useStateContext } from "../contexts/ContextProvider";
 
@@ -144,6 +147,9 @@ const Ecommerce = () => {
                 <Stacked 
                   width="320px" 
                   height="360px"
+                  data={stackedCustomSeries}
+                  xAxisData={stackedPrimaryXAxis}
+                  yAxisData={stackedPrimaryYAxis}
                 />
             </div>
           </div>
