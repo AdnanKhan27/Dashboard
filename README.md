@@ -1,4 +1,4 @@
-# DMS Dashboard using React & Tailwind
+# Dashboard Website using React & Tailwind
 > !Note: It's only a frontend application.
 
 ## `Technologies Used`
