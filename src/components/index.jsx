@@ -10,6 +10,7 @@ export { default as Help } from "./Help";
 export { default as Notification } from "./Notification";
 export { default as UserProfile } from "./UserProfile";
 export { default as Navbar } from "./Navbar";
+export { default as Cart } from "./Cart";
 
 /* Charts Components */
 export { default as SparkLine } from "./Charts/SparkLine";
