@@ -10,12 +10,12 @@ const Products = () => {
   const { currentColor } = useStateContext();
 
   return (
-    <div className="mt-14 md:mt-12 sm:mt-12">
+    <div className="mt-14 md:mt-10 sm:mt-12">
       {/* <div className="flex flex-wrap lg:flex-nowrap justify-center"> */}
-      <div className="p-4 flex flex-wrap gap-6 justify-center">
+      <div className="p-4 flex flex-wrap gap-8 justify-center">
         {productData.map((item, index) => (
           <div key={index}>
-            <div className="flex flex-col w-64 box-border bg-white dark:bg-opacity-5 drop-shadow-sm dark:text-gray-50 rounded-2xl">
+            <div className="flex flex-col w-64 sm:w-60 box-border bg-white dark:bg-opacity-5 drop-shadow-sm dark:text-gray-50 rounded-2xl">
               <img
                 src={item.image}
                 alt={item.name}
