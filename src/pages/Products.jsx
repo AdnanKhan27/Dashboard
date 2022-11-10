@@ -45,7 +45,7 @@ const Products = () => {
                       type="button"
                       // onClick={customFunc}
                       style={{ color: currentColor }}
-                      className="relative text-2xl rounded-full p-4 hover:bg-gray-100 dark:hover:bg-gray-600"
+                      className="relative text-2xl rounded-full p-4 hover:bg-opacity-70 dark:hover:bg-opacity-10 hover:bg-gray-200"
                     >
                       <MdOutlineAddShoppingCart />
                     </button>

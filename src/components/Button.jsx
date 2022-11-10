@@ -11,7 +11,7 @@ const Button = ({ bgColor, bgHoverColor, color, size, text, icon, borderRadius }
       type="button"
       onClick={ handleClick }
       style={{ backgroundColor:bgColor, color, borderRadius }}
-      className={`text-${size} p-3 hover:drop-shadow-xl hover:opacity-70 hover:${bgHoverColor}`}
+      className={`text-${size} p-3 hover:drop-shadow-xl hover:bg-opacity-70 dark:hover:bg-opacity-10 hover:${bgHoverColor}`}
     >
       {icon} {text}
     </button>
