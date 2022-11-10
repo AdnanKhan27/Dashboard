@@ -3,12 +3,12 @@ import { React, useEffect, useState } from "react";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 import { MdOutlineAddShoppingCart } from "react-icons/md";
 
-import { productData } from "../data/dummy";
+// import { productData } from "../data/dummy";
 
 import { useStateContext } from "../contexts/ContextProvider";
 
 const Products = () => {
-  const { currentColor, items, setItems } = useStateContext();
+  const { currentColor, items, setItems, cart, setCart } = useStateContext();
 
   useEffect(() => {
     const url = "https://fakestoreapi.com/products?limit=10";
@@ -38,32 +38,35 @@ const Products = () => {
       <div className="p-4 flex flex-wrap gap-8 justify-center">
         {items.map((item, index) => (
           <div key={index}>
-            <div className="flex flex-col justify-between w-64 sm:w-60 box-border min-h-[320px] bg-white dark:bg-opacity-5 drop-shadow-sm dark:text-gray-50 rounded-2xl">
-              <img
-                src={item.image}
-                alt={item.title}
-                style={{
-                  borderRadius: "16px",
-                  aspectRatio: "4/3",
-                  // width: "100%",
-                  // height: "100px",
-                  objectFit: "contain",
-                  backgroundColor: "white",
-                }}
-              />
-              <div className="mt-2 mx-2 text-sm">
-              <p className="font-semibold">{item.title}</p>
-              <p className="font-medium text-gray-500 dark:text-gray-400">
-                {item.category}
-              </p>
+            <div className="flex flex-col  w-64 sm:w-60 box-border justify-between min-h-[320px] bg-white dark:bg-opacity-5 drop-shadow-sm dark:text-gray-50 rounded-2xl">
+              <div>
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  style={{
+                    borderRadius: "16px",
+                    aspectRatio: "4/3",
+                    // width: "100%",
+                    // height: "100px",
+                    objectFit: "contain",
+                    backgroundColor: "white",
+                  }}
+                />
+                <div className="mt-2 mx-3 text-sm">
+                  <p className="font-semibold">{item.title}</p>
+                  <p className="font-medium text-gray-500 dark:text-gray-400">
+                    {item.category}
+                  </p>
+                </div>
               </div>
-              <div className="flex justify-between items-center mx-2">
+
+              <div className="flex justify-between items-center mx-2 ml-3">
                 <div>
                   <p className="text-lg font-semibold"> $ {item.price}</p>
                 </div>
                 {/* <button>
                   <MdOutlineAddShoppingCart />
-                </button> */}
+                  </button> */}
                 <div>
                   <TooltipComponent
                     content="Add to Cart"
@@ -71,9 +74,9 @@ const Products = () => {
                   >
                     <button
                       type="button"
-                      // onClick={customFunc}
+                      // onClick={addToCart(item)}
                       style={{ color: currentColor }}
-                      className="relative text-2xl rounded-full p-4 hover:bg-opacity-70 dark:hover:bg-opacity-10 hover:bg-gray-200"
+                      className="relative text-2xl rounded-full p-3 hover:bg-opacity-70 dark:hover:bg-opacity-10 hover:bg-gray-200"
                     >
                       <MdOutlineAddShoppingCart />
                     </button>
