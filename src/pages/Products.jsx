@@ -1,4 +1,5 @@
-import React from "react";
+import { React, useEffect, useState } from "react";
+
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 import { MdOutlineAddShoppingCart } from "react-icons/md";
 
@@ -7,31 +8,58 @@ import { productData } from "../data/dummy";
 import { useStateContext } from "../contexts/ContextProvider";
 
 const Products = () => {
-  const { currentColor } = useStateContext();
+  const { currentColor, items, setItems } = useStateContext();
+
+  useEffect(() => {
+    const url = "https://fakestoreapi.com/products?limit=10";
+
+    const fetchData = async () => {
+      try {
+        const response = await fetch(url);
+        const json = await response.json();
+        // console.log(json);
+        setItems(json);
+        // console.log(items);
+      } catch (error) {
+        console.log("error", error);
+      }
+    };
+
+    fetchData();
+    // console.log(json.)
+    // return () => {
+    //   second
+    // }
+  }, []);
 
   return (
     <div className="mt-14 md:mt-10 sm:mt-12">
       {/* <div className="flex flex-wrap lg:flex-nowrap justify-center"> */}
       <div className="p-4 flex flex-wrap gap-8 justify-center">
-        {productData.map((item, index) => (
+        {items.map((item, index) => (
           <div key={index}>
-            <div className="flex flex-col w-64 sm:w-60 box-border bg-white dark:bg-opacity-5 drop-shadow-sm dark:text-gray-50 rounded-2xl">
+            <div className="flex flex-col justify-between w-64 sm:w-60 box-border min-h-[320px] bg-white dark:bg-opacity-5 drop-shadow-sm dark:text-gray-50 rounded-2xl">
               <img
                 src={item.image}
-                alt={item.name}
+                alt={item.title}
                 style={{
                   borderRadius: "16px",
                   aspectRatio: "4/3",
-                  objectFit: "cover",
+                  // width: "100%",
+                  // height: "100px",
+                  objectFit: "contain",
+                  backgroundColor: "white",
                 }}
               />
-              <p className="mt-2 ml-2 text-l font-semibold">{item.name}</p>
-              <div className="flex justify-between items-center mx-2 mb-1">
+              <div className="mt-2 mx-2 text-sm">
+              <p className="font-semibold">{item.title}</p>
+              <p className="font-medium text-gray-500 dark:text-gray-400">
+                {item.category}
+              </p>
+              </div>
+              <div className="flex justify-between items-center mx-2">
                 <div>
-                  <p className="text-sm font-medium text-gray-500 dark:text-gray-400">
-                    {item.category}
-                  </p>
-                  <p className="text-lg font-semibold"> {item.price} </p>
+                  <p className="text-lg font-semibold"> $ {item.price}</p>
                 </div>
                 {/* <button>
                   <MdOutlineAddShoppingCart />

@@ -27,7 +27,7 @@ import { useStateContext } from "../contexts/ContextProvider";
 ); */
 
 const Cart = () => {
-  const { currentColor } = useStateContext();
+  const { currentColor, cart, setCart } = useStateContext();
 
   return (
     <div className="bg-half-transparent w-screen fixed nav-item top-0 right-0">
