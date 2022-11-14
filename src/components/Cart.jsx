@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useEffect } from "react";
 import Button from "./Button";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 
@@ -26,7 +26,19 @@ import { useStateContext } from "../contexts/ContextProvider";
 ); */
 
 const Cart = () => {
-  const { currentColor, cart, setCart } = useStateContext();
+  const { currentColor, cart, setCart, cartTotal, setCartTotal } = useStateContext();
+
+  useEffect(() => {
+    total();
+  }, [cart]);
+  
+  const total = () => {
+    let totalVal = 0;
+    for ( let i = 0; i < cart.length; i++) {
+      totalVal += cart[i].price;
+    }
+    setCartTotal(totalVal);
+  }
 
   const removeFromCart = (item) => {
     let hardCopy = [...cart];
@@ -112,13 +124,13 @@ const Cart = () => {
                 Sub Total
               </p>
               <p className="text-gray-600 text-l font-semibold dark:text-gray-200">
-                $890
+                ${cartTotal}
               </p>
             </div>
             <div className="flex justify-between">
               <p className="text-gray-600 dark:text-gray-200 text-l">Total</p>
               <p className="text-gray-600 dark:text-gray-100 text-l font-semibold">
-                $890
+                ${cartTotal}
               </p>
             </div>
             <button

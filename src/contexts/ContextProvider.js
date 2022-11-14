@@ -19,6 +19,7 @@ export const ContextProvider = ({children}) => {
     const [themeSettings, setThemeSettings] = useState(false); 
     const [items, setItems] = useState([]);
     const [cart, setCart] = useState([]);
+    const [cartTotal, setCartTotal] = useState(0);
 
     const setMode = (e) => {
         setCurrentMode(e.target.value);
@@ -47,6 +48,7 @@ export const ContextProvider = ({children}) => {
             setColor, setMode,
             items, setItems,
             cart, setCart,
+            cartTotal, setCartTotal,
             }}
         >
             {children}
