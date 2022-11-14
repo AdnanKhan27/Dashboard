@@ -32,12 +32,16 @@ const Products = () => {
     // }
   }, []);
 
+  const addToCart = (item) => {
+    setCart([...cart, item]);
+};
+
   return (
     <div className="mt-14 md:mt-10 sm:mt-12">
       {/* <div className="flex flex-wrap lg:flex-nowrap justify-center"> */}
       <div className="p-4 flex flex-wrap gap-8 justify-center">
-        {items.map((item, index) => (
-          <div key={index}>
+        {items.map((item) => (
+          <div key={item.id}>
             <div className="flex flex-col  w-64 sm:w-60 box-border justify-between min-h-[320px] bg-white dark:bg-opacity-5 drop-shadow-sm dark:text-gray-50 rounded-2xl">
               <div>
                 <img
@@ -74,7 +78,7 @@ const Products = () => {
                   >
                     <button
                       type="button"
-                      // onClick={addToCart(item)}
+                      onClick={() => addToCart(item)}
                       style={{ color: currentColor }}
                       className="relative text-2xl rounded-full p-3 hover:bg-opacity-70 dark:hover:bg-opacity-10 hover:bg-gray-200"
                     >
