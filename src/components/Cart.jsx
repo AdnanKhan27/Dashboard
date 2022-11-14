@@ -26,7 +26,13 @@ import { useStateContext } from "../contexts/ContextProvider";
 ); */
 
 const Cart = () => {
-  const { currentColor, cart } = useStateContext();
+  const { currentColor, cart, setCart } = useStateContext();
+
+  const removeFromCart = (item) => {
+    let hardCopy = [...cart];
+    hardCopy = hardCopy.filter((cart) => cart.id !== item.id);
+    setCart(hardCopy);
+  }
 
   return (
     <div className="bg-half-transparent w-screen fixed nav-item top-0 right-0 scroll-smooth">
@@ -70,6 +76,7 @@ const Cart = () => {
                       <div className="">
                         <button
                           className="text-lg p-2 text-red-400 rounded-full bg-gray-100 dark:bg-gray-600 hover:drop-shadow-xl hover:bg-opacity-70 dark:hover:bg-opacity-10"
+                          onClick={() => removeFromCart(item)}
                         >
                           <AiOutlineDelete />
                         </button>
@@ -85,7 +92,8 @@ const Cart = () => {
                         <p className="border-x-1 border-gray-300 dark:border-gray-700 px-2">
                           0
                         </p>
-                        <button className="text-green-500 hover:bg-gray-300 p-2 rounded-r-lg">
+                        <button className="text-green-500 hover:bg-gray-300 p-2 rounded-r-lg"
+                        >
                           <AiOutlinePlus />
                         </button>
                       </div>
