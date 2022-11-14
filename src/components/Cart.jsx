@@ -26,25 +26,44 @@ import { useStateContext } from "../contexts/ContextProvider";
 ); */
 
 const Cart = () => {
-  const { currentColor, cart, setCart, cartTotal, setCartTotal } = useStateContext();
+  const { currentColor, cart, setCart, cartTotal, setCartTotal, quantity, setQuantity } =
+    useStateContext();
 
   useEffect(() => {
     total();
   }, [cart]);
-  
+
   const total = () => {
     let totalVal = 0;
-    for ( let i = 0; i < cart.length; i++) {
+    for (let i = 0; i < cart.length; i++) {
       totalVal += cart[i].price;
     }
     setCartTotal(totalVal);
-  }
+  };
+  
+  const addQuantity = (item) => {
+    // let newPrice = item.price;
+    /* change the quantity +1 */
+    let newQuantity = quantity + 1;
+
+    console.log(newQuantity);
+    // setQuantity(newQuantity);
+
+    /* change the total +item.price */
+
+  };
+
+  const subQuantity = (item) => {
+
+  };
 
   const removeFromCart = (item) => {
     let hardCopy = [...cart];
+    /* returns cartItems which other than the item passed */
     hardCopy = hardCopy.filter((cart) => cart.id !== item.id);
+    // console.log(hardCopy);
     setCart(hardCopy);
-  }
+  };
 
   return (
     <div className="bg-half-transparent w-screen fixed nav-item top-0 right-0 scroll-smooth">
@@ -79,7 +98,7 @@ const Cart = () => {
                   <div className="flex flex-col text-left justify-between w-full">
                     <div className="flex flex-row justify-between gap-2">
                       <div className="text-sm">
-                        <p className="font-semibold">{item.title}{" "}</p>
+                        <p className="font-semibold">{item.title} </p>
                         <p className="font-medium text-gray-500 dark:text-gray-400">
                           {" "}
                           {item.category}{" "}
@@ -98,13 +117,20 @@ const Cart = () => {
                       <p className="text-l font-semibold"> ${item.price} </p>
 
                       <div className="flex flex-row border items-center border-gray-300 dark:border-gray-700 rounded-lg box-border">
-                        <button className="text-red-500 hover:bg-gray-300 p-2 rounded-l-lg">
+                        <button
+                          name="subtractQuantity"
+                          onClick={() => subQuantity(item)}
+                          className="text-red-500 hover:bg-gray-300 p-2 rounded-l-lg"
+                        >
                           <AiOutlineMinus />
                         </button>
                         <p className="border-x-1 border-gray-300 dark:border-gray-700 px-2">
-                          0
+                          {quantity}
                         </p>
-                        <button className="text-green-500 hover:bg-gray-300 p-2 rounded-r-lg"
+                        <button
+                          name="addQuantity"
+                          onClick={() => addQuantity(item)}
+                          className="text-green-500 hover:bg-gray-300 p-2 rounded-r-lg"
                         >
                           <AiOutlinePlus />
                         </button>
@@ -124,13 +150,13 @@ const Cart = () => {
                 Sub Total
               </p>
               <p className="text-gray-600 text-l font-semibold dark:text-gray-200">
-                ${cartTotal}
+                $ {cartTotal}
               </p>
             </div>
             <div className="flex justify-between">
               <p className="text-gray-600 dark:text-gray-200 text-l">Total</p>
               <p className="text-gray-600 dark:text-gray-100 text-l font-semibold">
-                ${cartTotal}
+                $ {cartTotal}
               </p>
             </div>
             <button

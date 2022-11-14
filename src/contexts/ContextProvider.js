@@ -20,6 +20,7 @@ export const ContextProvider = ({children}) => {
     const [items, setItems] = useState([]);
     const [cart, setCart] = useState([]);
     const [cartTotal, setCartTotal] = useState(0);
+    const [quantity, setQuantity] = useState(1);
 
     const setMode = (e) => {
         setCurrentMode(e.target.value);
@@ -49,6 +50,7 @@ export const ContextProvider = ({children}) => {
             items, setItems,
             cart, setCart,
             cartTotal, setCartTotal,
+            quantity, setQuantity,
             }}
         >
             {children}
