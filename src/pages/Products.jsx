@@ -1,4 +1,4 @@
-import { React, useEffect, useState } from "react";
+import { React, useEffect, useState, useReducer } from "react";
 
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 import { MdOutlineAddShoppingCart } from "react-icons/md";
@@ -6,9 +6,10 @@ import { MdOutlineAddShoppingCart } from "react-icons/md";
 // import { productData } from "../data/dummy";
 
 import { useStateContext } from "../contexts/ContextProvider";
+import { Reducer } from "../contexts/Reducer";
 
 const Products = () => {
-  const { currentColor, items, setItems, cart, setCart } = useStateContext();
+  const { currentColor, items, setItems, /* cart, setCart, */ state, dispatch } = useStateContext();
 
   useEffect(() => {
     const url = "https://fakestoreapi.com/products?limit=10";
@@ -24,17 +25,25 @@ const Products = () => {
         console.log("error", error);
       }
     };
-
     fetchData();
-    // console.log(json.)
-    // return () => {
-    //   second
-    // }
   }, []);
 
   const addToCart = (item) => {
-    setCart([...cart, item]);
+    // setCart([...cart, item]);
+    dispatch({
+      type: "ADD_TO_CART",
+      payload: {
+        id: item.id,
+        title: item.title,
+        category: item.category,
+        image: item.image,
+        qty: 1,
+        price: item.price,
+      }
+    })
 };
+
+  // console.log(cart);
 
   return (
     <div className="mt-14 md:mt-10 sm:mt-12">
