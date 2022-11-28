@@ -6,7 +6,3 @@
  - React JS
  - Syncfusion Components
  - Tailwind CSS
-
-
-[🛒shopping cart branch](https://dashboard-git-shopping-cart-adnankhan27.vercel.app )
-[📃sidebar branch](https://dashboard-git-sidebar-adnankhan27.vercel.app )
