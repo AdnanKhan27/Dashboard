@@ -6,13 +6,12 @@ import { MdOutlineAddShoppingCart } from "react-icons/md";
 // import { productData } from "../data/dummy";
 
 import { useStateContext } from "../contexts/ContextProvider";
-import { Reducer } from "../contexts/Reducer";
 
 const Products = () => {
   const { currentColor, items, setItems, /* cart, setCart, */ state, dispatch } = useStateContext();
 
   useEffect(() => {
-    const url = "https://fakestoreapi.com/products?limit=10";
+    const url = "https://fakestoreapi.com/products?limit=12";
 
     const fetchData = async () => {
       try {
